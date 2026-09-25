@@ -18,6 +18,8 @@ app.use(cors({
     origin: allowedOrigins,
     methods: ['GET', 'POST', 'PATCH', 'OPTIONS'],
     allowedHeaders: ['Content-Type', 'Authorization', 'Idempotency-Key'],
+    // browsers hide non-safelisted response headers from JS unless exposed; the UI needs these for the 429 countdown
+    exposedHeaders: ['Retry-After', 'X-RateLimit-Limit', 'X-RateLimit-Remaining'],
 }));
 app.use(express.json());
 

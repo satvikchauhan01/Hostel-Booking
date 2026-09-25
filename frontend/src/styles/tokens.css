@@ -1,0 +1,148 @@
+/* ==========================================================================
+   Design tokens - Quarters
+   Warm architectural neutrals + deep indigo, with a dual-shadow neumorphic
+   elevation system. Everything visual is built from these variables.
+   ========================================================================== */
+
+:root {
+  color-scheme: light;
+
+  /* --- palette ---------------------------------------------------------- */
+  --bg: #e9ece8;
+  --surface: #eef1ed;
+  --surface-hi: #f4f6f2;
+  --surface-dark: #dfe4df;
+  --text: #1f2933;
+  --muted: #5c6770;
+  --faint: #5f6a73; /* 4.5:1+ on every surface - it is used for small text, so it must stay readable */
+  --border: rgba(31, 41, 51, 0.09);
+
+  --primary: #34466f;
+  --primary-strong: #283958;
+  --primary-ink: #f4f6fb;
+  --primary-soft: rgba(52, 70, 111, 0.1);
+
+  --teal: #376b66;
+  --teal-soft: rgba(55, 107, 102, 0.13);
+  --success: #41695a;
+  --success-soft: rgba(65, 105, 90, 0.14);
+  --danger: #b86464;
+  --danger-ink: #a04b4b;
+  --danger-soft: rgba(184, 100, 100, 0.13);
+  --warning: #b58b4a;
+  --warning-ink: #8a6524;
+  --warning-soft: rgba(181, 139, 74, 0.16);
+  --info-ink: #34466f;
+  --info-soft: rgba(52, 70, 111, 0.1);
+
+  /* --- neumorphic light source (top-left) ------------------------------- */
+  --sh-dark: rgba(158, 167, 160, 0.62);
+  --sh-light: rgba(255, 255, 255, 0.82);
+  --in-dark: rgba(158, 167, 160, 0.7);
+  --in-light: rgba(255, 255, 255, 0.9);
+
+  --raised-1: 3px 3px 7px var(--sh-dark), -3px -3px 7px var(--sh-light);
+  --raised-2: 7px 7px 16px var(--sh-dark), -6px -6px 14px var(--sh-light);
+  --raised-3: 14px 14px 30px var(--sh-dark), -10px -10px 24px var(--sh-light);
+  --inset-1: inset 2px 2px 5px var(--in-dark), inset -2px -2px 5px var(--in-light);
+  --inset-2: inset 4px 4px 9px var(--in-dark), inset -4px -4px 9px var(--in-light);
+  --edge-highlight: inset 0 1px 0 rgba(255, 255, 255, 0.16);
+
+  /* --- decorative (background, hatch) ----------------------------------- */
+  --plan-line: rgba(52, 70, 111, 0.13);
+  --plan-fill: rgba(52, 70, 111, 0.05);
+  --grid-dot: rgba(31, 41, 51, 0.14);
+  --hatch: rgba(31, 41, 51, 0.055);
+  --backdrop: rgba(28, 34, 40, 0.38);
+
+  /* --- shape ------------------------------------------------------------ */
+  --radius-sm: 10px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --radius-xl: 32px;
+
+  /* --- spacing ---------------------------------------------------------- */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --gutter: 16px;
+
+  /* --- type ------------------------------------------------------------- */
+  --font: 'Manrope Variable', 'Manrope', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --fs-2xs: 0.6875rem;
+  --fs-xs: 0.75rem;
+  --fs-sm: 0.8125rem;
+  --fs-base: 0.9375rem;
+  --fs-md: 1rem;
+  --fs-lg: 1.125rem;
+  --fs-xl: 1.375rem;
+  --fs-2xl: 1.75rem;
+  --fs-3xl: 2.25rem;
+  --fs-display: clamp(2.1rem, 4.6vw, 3.4rem);
+
+  /* --- motion ----------------------------------------------------------- */
+  --ease: cubic-bezier(0.22, 0.7, 0.24, 1);
+  --transition-fast: 160ms;
+  --transition-normal: 240ms;
+  --transition-slow: 360ms;
+
+  /* --- layout ----------------------------------------------------------- */
+  --content-width: 1240px;
+  --nav-height: 68px;
+}
+
+@media (min-width: 720px) {
+  :root {
+    --gutter: 28px;
+  }
+}
+
+:root[data-theme='dark'] {
+  color-scheme: dark;
+
+  --bg: #1b1f22;
+  --surface: #212629;
+  --surface-hi: #272d31;
+  --surface-dark: #171a1d;
+  --text: #e6eaec;
+  --muted: #9ba6ad;
+  --faint: #88939a;
+  --border: rgba(255, 255, 255, 0.07);
+
+  --primary: #8ea3d8;
+  --primary-strong: #a3b5e4;
+  --primary-ink: #131826;
+  --primary-soft: rgba(142, 163, 216, 0.14);
+
+  --teal: #63a59f;
+  --teal-soft: rgba(99, 165, 159, 0.16);
+  --success: #88bb9d;
+  --success-soft: rgba(136, 187, 157, 0.16);
+  --danger: #d08383;
+  --danger-ink: #dc9494;
+  --danger-soft: rgba(208, 131, 131, 0.16);
+  --warning: #cfa561;
+  --warning-ink: #d8b273;
+  --warning-soft: rgba(207, 165, 97, 0.16);
+  --info-ink: #a3b5e4;
+  --info-soft: rgba(142, 163, 216, 0.14);
+
+  --sh-dark: rgba(0, 0, 0, 0.5);
+  --sh-light: rgba(255, 255, 255, 0.045);
+  --in-dark: rgba(0, 0, 0, 0.55);
+  --in-light: rgba(255, 255, 255, 0.05);
+  --edge-highlight: inset 0 1px 0 rgba(255, 255, 255, 0.1);
+
+  --plan-line: rgba(163, 181, 228, 0.13);
+  --plan-fill: rgba(163, 181, 228, 0.05);
+  --grid-dot: rgba(255, 255, 255, 0.11);
+  --hatch: rgba(255, 255, 255, 0.045);
+  --backdrop: rgba(5, 7, 9, 0.6);
+}

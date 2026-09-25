@@ -46,8 +46,32 @@ backend/
 		utils/
 		validators/
 	migrations/
+frontend/
+	src/
+		components/   (ui, layout, auth, rooms, booking, feedback)
+		pages/
+		contexts/
+		hooks/
+		services/     (API client, adapters, socket)
+		utils/
+		styles/       (design tokens + component styles)
 docker-compose.yml
 ```
+
+## Frontend
+
+React + Vite (plain JavaScript) with a hand-built neumorphic design system (CSS tokens, light and dark themes, no UI framework).
+
+```bash
+cd frontend
+npm install
+npm run dev        # http://localhost:5173
+```
+
+- The backend URL comes from `VITE_API_URL` (default `http://localhost:5000`, see `frontend/.env.example`).
+- Add the frontend's origin to `CORS_ORIGIN` in `backend/.env`.
+- Pages: Login, Register, Rooms (live floor map), My Booking, Profile, and a 404.
+- All backend shapes are mapped in `src/services/adapters.ts`, so components never touch raw API fields.
 
 ## API Overview
 
